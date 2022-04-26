@@ -18,7 +18,7 @@ public class ImplementAspect {
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		ImplementAspect call = (ImplementAspect)context.getBean("aspect");
 		
-		System.out.print("enter an integer : ");
+		System.out.println("enter an integer");
 		int a = sc.nextInt();
 		if(a == 1) {
 			throw new RuntimeException("no is one");
@@ -30,7 +30,7 @@ public class ImplementAspect {
 		call.myMethod();
 	}
 
-	private void myMethod() {
+	public void myMethod() {
 		System.out.println("my other method");
 	}
 

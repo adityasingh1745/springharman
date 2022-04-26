@@ -9,8 +9,46 @@
 
 	<aop:aspectj-autoproxy />
 
+
+	<bean id="studentbean" class="springharman.model.Student">
+		<property name="name" value="abdul ansari"></property>
+	</bean>
+
+	<bean id="emp" class="springharman.model.Employee">
+		<constructor-arg value="10" type="int"></constructor-arg>
+		<constructor-arg value="Sonoo"></constructor-arg>
+		<constructor-arg>
+			<ref bean="a1" />
+		</constructor-arg>
+
+	</bean>
+
+	<bean id="a1" class="springharman.model.Address">
+		<constructor-arg value="ghaziabad"></constructor-arg>
+		<constructor-arg value="UP"></constructor-arg>
+		<constructor-arg value="India"></constructor-arg>
+	</bean>
+
+	<bean id="q" class="springharman.model.Question">
+		<constructor-arg value="111"></constructor-arg>
+		<constructor-arg value="What is java?"></constructor-arg>
+		<constructor-arg>
+			<list>
+				<value>Java is a programming language</value>
+				<value>Java is a Platform</value>
+				<value>Java is an Island of Indonasia</value>
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="b" class="springharman.beans.B"></bean>
+	<bean id="a" class="springharman.beans.A" autowire="byName"></bean>
+
 	<bean id="aspect" class="aop.ImplementAspect" />
 	<bean class="aop.Logging" />
+	
+		<bean id = "std" class="aop.Student" />
+	
 
 
 </beans> 

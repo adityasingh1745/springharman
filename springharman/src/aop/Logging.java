@@ -12,10 +12,19 @@ public class Logging {
 		System.out.println("log--before method is executed");
 	}
 	
-	@After("execution(public void aop.ImplementAspect.aspectCall())")
-	public void loggingAdvice2() {
-		System.out.println("log--after method is executed");
+//	@After("execution(public void aop.ImplementAspect.aspectCall())")
+//	public void loggingAdvice2() {
+//		System.out.println("log--after method is executed");
+//	}
+
+//	@Before("execution(public * get*())")
+//	public void loggingAdviceGet() {
+//		System.out.println("log--before getter is executed");
+//	}
+
+	@Before("execution(* aop..*.*(..))")
+	public void loggingAdviceAllClassesMethods() {
+		System.out.println("log --> for all the classes and its methods of app package");
 	}
 	
-
 }
